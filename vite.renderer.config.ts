@@ -1,0 +1,16 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+
+export default defineConfig({
+  root: 'renderer',
+  base: './',                    // relative paths so file:// loading works in packaged Electron
+  plugins: [react()],
+  resolve: { alias: { '@': path.resolve(__dirname, 'src') } },
+  build: {
+    outDir: '../dist-renderer',
+    emptyOutDir: true,
+    rollupOptions: { input: path.resolve(__dirname, 'renderer/index.html') }
+  },
+  server: { port: 5173 }
+});

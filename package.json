@@ -1,0 +1,56 @@
+{
+  "name": "power-platform-doc-tool",
+  "version": "0.1.0",
+  "description": "Local-only Power Platform documentation generator",
+  "main": "dist-electron/electron/main.js",
+  "author": "CoE Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:renderer\" \"wait-on http://localhost:5173 && npm run dev:electron\"",
+    "dev:renderer": "vite --config vite.renderer.config.ts",
+    "dev:electron": "tsc -p tsconfig.electron.json && electron .",
+    "build": "npm run build:renderer && npm run build:electron",
+    "build:renderer": "vite build --config vite.renderer.config.ts",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "docx": "^8.5.0",
+    "fast-xml-parser": "^4.3.6",
+    "js-yaml": "^4.1.0",
+    "jszip": "^3.10.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.9.1",
+    "postcss": "^8.4.33",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vitest": "^1.2.1",
+    "wait-on": "^7.2.0",
+    "zustand": "^4.5.0"
+  },
+  "build": {
+    "appId": "com.coe.ppdt",
+    "productName": "PP Doc Tool",
+    "directories": { "output": "release" },
+    "files": ["dist-electron/**/*", "dist-renderer/**/*"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg", "hardenedRuntime": true }
+  }
+}
