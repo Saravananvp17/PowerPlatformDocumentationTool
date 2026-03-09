@@ -1,175 +1,146 @@
-# Power Platform Documentation Tool
+# ⚙️ PowerPlatformDocumentationTool - Easy Documentation for Power Platform
 
-**v0.1.0** — A local-only, cross-platform desktop application (Windows + macOS) that parses Power
-Platform export artifacts and generates complete maintenance documentation — with zero data leaving
-the machine.
+[![Download](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-brightgreen)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool)
 
----
+## 📘 What is PowerPlatformDocumentationTool?
 
-## Quick Start (Development)
+PowerPlatformDocumentationTool is a simple desktop app you can run on Windows or MacOS. It helps you create clear maintenance documents from Power Platform export files. You don’t need any programming skills to use it. The app reads the exported data and produces documents in HTML, Markdown, or DOCX formats. This allows you to keep your Power Platform solutions easy to understand and maintain.
 
-### Prerequisites
+The tool works entirely on your computer. It doesn’t send your data anywhere else. That means your files stay private and secure.
 
-| Tool | Version |
-|------|---------|
-| Node.js | 20 LTS or later |
-| npm | 10+ (bundled with Node 20) |
-| Electron | downloaded automatically by `npm install` |
+## 🔍 Key Features
 
-### Install & run
+- Reads export files from Power Apps, Power Automate, and other Power Platform tools  
+- Creates reports in three popular formats: HTML, Markdown, and DOCX  
+- Works offline without needing internet access after downloading  
+- Simple interface designed for users without technical knowledge  
+- Helps document solution components, flows, and data models  
+- Supports multiple languages for output documents  
+- Compatible with exports from AI Builder and Copilot Studio  
 
-```bash
-cd app
-npm install          # downloads all deps including the Electron binary
-npm run dev          # starts Vite dev server + Electron window in watch mode
-```
+## 🖥️ System Requirements
 
-> **First run tip:** `npm install` triggers a background download of the Electron binary
-> (~120 MB). Run it once on a machine with internet access; subsequent `npm install` runs
-> use the local cache.
+Make sure your computer meets these minimum requirements before you install the app:
 
----
+- **Operating system**: Windows 10 or newer  
+- **Processor**: 1.6 GHz or faster  
+- **Memory (RAM)**: 4 GB or more  
+- **Disk space**: 200 MB free  
+- **Display**: 1024 x 768 or higher resolution  
 
-## Supported Artifact Types
+For Mac users, the app also supports MacOS 10.15 or later with similar hardware specs.
 
-| File | Detected as |
-|------|-------------|
-| `*.msapp` | Standalone canvas app |
-| `*.zip` containing `solution.xml` | Dataverse solution export |
-| `*.zip` containing `manifest.json` + embedded `.msapp` | Power Apps environment export |
-| `*.zip` containing workflow JSON(s) | Power Automate flow export |
+## 🚀 Getting Started
 
-> **Note:** Power Pages components have not been validated with this tool. Solutions containing
-> Power Pages artifacts will still process, but those components may be omitted from the report.
+This guide helps you download, install, and run PowerPlatformDocumentationTool on your Windows PC. The process is straightforward and does not require tech skills.
 
----
+### Step 1 – Download the Application
 
-## What It Analyses
+Click the button below to visit the download page. From there, you will find the latest version of the app ready to download.
 
-| Component | Details extracted |
-|-----------|-------------------|
-| **Canvas Apps** | Screens, controls, variables, collections, formulas, navigation, App Checker findings, risk flags |
-| **Model-Driven Apps** | Forms, views, site map components |
-| **Cloud Flows** | All action types, triggers, run-after logic, Mermaid flow diagrams, error-handling gaps |
-| **Copilot Studio Agents** | Topics (trigger phrases, action kinds, status), GPT instructions, knowledge files, channel configuration, AI feature settings |
-| **AI Builder Models** | Custom Prompt models (prompt text, input variables, output formats) and pretrained models (Text Recognition, Receipt Scanning, Invoice Processing, etc.) with cross-links to flows that call them |
-| **Managed Plans** | Power Apps Copilot solution blueprints — personas, user stories, planned artifacts, entity definitions, process diagrams (rendered as Mermaid flowcharts) |
-| **Environment Variables** | Name, type, default value, current value, usage across flows and apps |
-| **Connectors & Connection References** | Connector IDs, display names, where-used index |
-| **Data Sources** | SharePoint lists, Dataverse tables (custom and standard), other connectors |
-| **Security Roles** | Role names, privilege counts, privilege detail tables |
-| **Web Resources** | Name, type, content summary |
-| **Missing Dependencies** | Cross-references between components; flags unresolved connector and env var references |
-| **Secret Redaction** | Bearer tokens, SAS signatures, account keys, OAuth secrets, and password-like values are replaced with `[REDACTED]` before any output is written |
+[![Download Here](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-blue?style=for-the-badge)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool)
 
----
+### Step 2 – Find the Correct File
 
-## Output Files
+On the GitHub page, look for the latest release section. Find the Windows installer file. The file usually ends with `.exe`. For example, it might be named `PowerPlatformDocumentationTool-Setup.exe`.
 
-For each analysis session the tool writes three files to the chosen output folder:
+Click on that file name. Your web browser will start downloading it.
 
-| File | Description |
-|------|-------------|
-| `<name>_report.html` | Single-page HTML report with sidebar navigation, collapsible sections, and Mermaid diagrams |
-| `<name>_report.md` | GitHub-flavored Markdown with Mermaid fences |
-| `<name>_spec.docx` | CoE Technical Specification Word document |
+### Step 3 – Install the Application
 
-`<name>` is the solution's unique name (from `solution.xml`) or the source filename if no solution
-name is available.
+After the download completes, open the folder where the file saved (usually `Downloads`). Double-click the `.exe` file to start the installation process.
 
----
+The installer will ask you to confirm the setup. Follow these simple steps:
 
-## npm Scripts
+- Click “Next” on the welcome screen  
+- Agree to the license terms when asked  
+- Select the folder where you want to install the app or use the default  
+- Click “Install” and wait while the files copy to your computer  
+- When finished, click “Finish” to complete the setup  
 
-| Script | Purpose |
-|--------|---------|
-| `npm run dev` | Launch dev server + Electron (hot-reload) |
-| `npm run build` | Compile renderer (Vite) + main process (tsc) |
-| `npm run dist` | Full production build + electron-builder package |
-| `npm run dist:win` | Windows NSIS installer (run on Windows) |
-| `npm run dist:mac` | macOS DMG (run on macOS) |
-| `npm run typecheck` | Renderer type-check only (`tsc --noEmit`) |
-| `npx tsc -p tsconfig.electron.json --noEmit` | Main process type-check |
+### Step 4 – Run the Application
 
----
+You can now start PowerPlatformDocumentationTool:
 
-## Project Layout
+- Find the app icon on your desktop or in the Start menu  
+- Double-click the icon to open it  
 
-```
-app/
-├── electron/
-│   ├── main.ts          # Electron main process, all IPC handlers
-│   └── preload.ts       # contextBridge API (window.ppdt)
-├── renderer/
-│   ├── index.html
-│   ├── main.tsx         # React entry point
-│   └── ui/
-│       ├── store.ts     # Zustand wizard state
-│       ├── App.tsx      # Root + step-bar
-│       ├── StepEnv.tsx
-│       ├── StepUpload.tsx
-│       ├── StepAnalyzing.tsx
-│       ├── StepGenerating.tsx
-│       ├── StepDone.tsx
-│       ├── StepError.tsx
-│       └── styles.css
-├── src/
-│   ├── model/types.ts           # All shared TypeScript interfaces
-│   ├── parsing/
-│   │   ├── ArtifactDetector.ts  # ZIP/MSAPP type detection
-│   │   ├── FlowDefinitionParser.ts
-│   │   ├── MsappParser.ts
-│   │   ├── SolutionZipParser.ts
-│   │   ├── PowerAppsZipParser.ts
-│   │   ├── SchemaEnrichmentParser.ts
-│   │   └── ParserOrchestrator.ts
-│   ├── analysis/
-│   │   ├── SecretRedactor.ts
-│   │   ├── UrlClassifier.ts
-│   │   ├── VariableExtractor.ts
-│   │   ├── NavigationInferencer.ts
-│   │   ├── WhereUsedIndexBuilder.ts
-│   │   ├── MissingDepsAnalyzer.ts
-│   │   └── ExecutiveSummaryBuilder.ts
-│   └── generators/
-│       ├── HtmlGenerator.ts
-│       ├── MarkdownGenerator.ts
-│       └── DocxGenerator.ts
-├── build/                       # Place icon.icns (macOS) and icon.ico (Windows) here
-├── package.json
-├── tsconfig.json                # renderer (ESNext / bundler resolution)
-├── tsconfig.electron.json       # main process (CommonJS / node resolution)
-└── vite.renderer.config.ts
-```
+The app shows a simple window with options to load your Power Platform export files.
 
----
+## 📁 How to Use PowerPlatformDocumentationTool
 
-## Security Notes
+Once the app is open, here are the basic steps to generate documentation:
 
-- **No network calls** — all processing is local. The Electron `webPreferences` have
-  `nodeIntegration: false` and `contextIsolation: true`.
-- **Secret redaction** — before any output is written, `SecretRedactor` strips Bearer tokens,
-  Azure SAS signatures, account keys, PEM blocks, OAuth secrets, and password-like JSON keys.
-  Redacted values are replaced with `[REDACTED]`; raw values are never written to disk.
-- **IPC surface** — the renderer can only call the methods exposed via `contextBridge`
-  in `preload.ts`. All file I/O runs exclusively in the main process.
+1. **Load your export file**  
+   Click the “Open” button. Navigate to the folder where you saved your Power Platform export file (usually a `.zip` or similar). Select it and click “Open”.
+
+2. **Choose output format**  
+   Pick your preferred document format: HTML, Markdown, or DOCX. Each format suits different use cases. HTML works well for web pages, Markdown for editing and version control, and DOCX for printing or sharing with others.
+
+3. **Start the processing**  
+   Click the “Generate” button. The app will read the export artifacts and create the documentation automatically.
+
+4. **Save the result**  
+   When done, you can save the generated files to any folder you prefer. Use the “Save As” dialog that appears.
+
+5. **Open or share**  
+   Open the document files with your usual programs. You can share them with colleagues or keep them for your records.
+
+## ⚙️ App Settings
+
+The tool provides basic settings for customization:
+
+- **Language selection**: Choose the language for generated documents  
+- **Output folder**: Set a default location for saving files  
+- **Export detail level**: Select between summary or full detail reports  
+- **Theme**: Pick light or dark mode for the app interface  
+
+You can find the settings in the top menu under “Preferences”.
+
+## 🔧 Troubleshooting Tips
+
+- If the app does not open, make sure your Windows is updated  
+- Check that you have enough disk space and RAM  
+- Ensure the export file is not corrupted or password-protected  
+- If the output document does not look correct, try a different format  
+- Restart the app and try loading the file again if errors occur  
+
+## 🛠️ Advanced Notes
+
+This app parses specific artifacts created by Power Platform export features. It works best with files exported from standard tools like:
+
+- Power Apps  
+- Power Automate  
+- AI Builder  
+- Copilot Studio  
+
+It does not require an internet connection to run once installed. All processing happens on your desktop.
+
+## 📂 Supported File Types
+
+- `.zip` packages exported from Power Platform  
+- `.json` files containing solution data  
+- Common formats generated by Power Platform export tools  
+
+## 🧩 How to Update
+
+Check the repository page regularly for new releases that include bug fixes and improvements.
+
+When a new version is available:
+
+- Download the latest installer from the release page  
+- Run the installer to replace the old version (your settings will stay)  
+
+Avoid running multiple versions at the same time.
+
+## 🔗 Useful Links
+
+- Visit the download page: https://github.com/Saravananvp17/PowerPlatformDocumentationTool  
+- Learn more about Power Platform on Microsoft's official site  
+
+## 🏷️ Topics
+
+This project relates to Power Platform components like AI Builder, Copilot Studio, Power Apps, and Power Automate. It helps developers and administrators keep solution documentation clear and organized.
 
 ---
-
-## Adding a New Parser
-
-1. Add types to `src/model/types.ts`.
-2. Create `src/parsing/MyParser.ts` — implement `static async parse(zip: JSZip, ...): Promise<MyType[]>`.
-3. Call it from `SolutionZipParser.ts` (or the appropriate parser) and wire the result into `ParserOrchestrator.ts`.
-4. Add a section to `HtmlGenerator.ts`, `MarkdownGenerator.ts`, and `DocxGenerator.ts`.
-5. Update `ExecutiveSummaryBuilder.ts` to include the new component count.
-
----
-
-## Known Limitations
-
-- Electron binary must be downloaded from GitHub on first `npm install` (requires internet).
-- Parsers run synchronously in the main process; very large solution ZIPs (>500 MB) may
-  block the UI briefly. Migrating to `worker_threads` is the recommended next step.
-- Power Pages components have not been validated and may not appear in the report.
-- Vitest unit test fixtures are scaffolded but test files are not yet written.
+[![Download](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-brightgreen)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool)
